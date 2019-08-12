@@ -1,0 +1,19 @@
+version: '3.1'
+
+services: 
+  db:
+    image: mongo
+    restart: always
+    # environment:
+    #   MONGO_INITDB_DATABASE: test
+    #   MONGO_INITDB_ROOT_USERNAME: example123
+    #   MONGO_INITDB_ROOT_PASSWORD: example123
+    ports: 
+      - "37017:27017"
+    networks: 
+      - my_net
+
+networks: 
+  my_net:
+    driver: bridge
+  
